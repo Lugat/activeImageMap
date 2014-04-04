@@ -1,5 +1,5 @@
 /**
-* activeImageMap v0.1
+* activeImageMap v0.1b
 * https://github.com/Lugat/activeImageMap
 *
 * Copyright (c) 2014 Squareflower Websolutions - Lukas Rydygel
@@ -8,7 +8,7 @@
 ;(function($, window, document, undefined) {
  
   var PLUGIN_NAME = 'activeImageMap',
-      PLUGIN_VERSION = '0.1';
+      PLUGIN_VERSION = '0.1b';
   
   function Plugin(element, settings) {
     
@@ -17,7 +17,7 @@
       hover: true,
       attr: 'alt',
       active: function() {},
-      activeClass: '.active'
+      activeClass: 'active'
     }, settings);
     
     this.name = PLUGIN_NAME;
@@ -60,7 +60,9 @@
         plugin.setInactive();
         plugin.setActive(i);
         
-      }, function(i) {
+      }, function() {
+        
+        var i = $(this).index();
         
         plugin.resetOriginalImage();
         plugin.setInactive(i);
